@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp" >
+
+    
+    <ImageView
+        android:id="@+id/ivBusNameList"
+        android:padding="5dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/buslist" />
+
+    <TextView
+         android:padding="5dp"
+        android:id="@+id/tvBusName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/ivBusNameList"
+        android:layout_toRightOf="@+id/ivBusNameList"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+         android:paddingLeft="8dp"
+        android:id="@+id/tvBusDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvBusName"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvBusName"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

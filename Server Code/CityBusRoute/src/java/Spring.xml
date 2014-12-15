@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+ 
+    <bean 
+    class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+     
+    
+    <!--bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          p:location="/WEB-INF/jdbc.properties" /-->
+
+<bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/bus_route"/>
+    <property name="username" value="root"/>
+    <property name="password" value=""/>  
+</bean>
+    
+    
+    <bean id="loginCheck" class="dao.LoginCheck">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+     <bean id="addBus" class="dao.AddBus">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+     <bean id="addBusStand" class="dao.AddBusStand">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+     <bean id="removeBus" class="dao.RemoveBus">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+     <bean id="updateRoute" class="dao.UpdateRoute">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="removeStand" class="dao.RemoveStand">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="jsonUpdate" class="dao.JSONUpdate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="addSingleStand" class="dao.AddSingleStand">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="removeSingleStand" class="dao.RemoveSingleStand">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="updateSingleStand" class="dao.UpdateSingleStand">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="addSingleCoordinate" class="dao.AddSingleCoordinate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="removeSingleCoordinate" class="dao.RemoveSingleCoordinate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="updateSingleCoordinate" class="dao.UpdateSingleCoordinate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+</beans>

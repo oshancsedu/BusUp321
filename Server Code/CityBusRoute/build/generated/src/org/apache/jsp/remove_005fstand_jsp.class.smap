@@ -1,0 +1,10 @@
+SMAP
+remove_005fstand_jsp.java
+JSP
+*S JSP
+*F
++ 0 remove_stand.jsp
+remove_stand.jsp
+*L
+5,18:44
+*E
